@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spis stron</title>
-</head>
-<body>
-    <h1>Spis treści</h1>
-</body>
-</html>
+@extends('layout.app')
+
+@section('title', 'Spis stron')
+
+@section('content')
+    <h1>Moje strony</h1>
+    @foreach ($pages as $page)
+        <h2>{{ $page->title }}</h2>
+        <p> <a href="strony/{{ $page->id }}"> >>>Czytaj więcej</a> </p>
+        <hr>
+    @endforeach
+@endsection

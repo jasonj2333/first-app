@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('strony', [PagesController::class, 'index']);
-Route::get('/strony/{title}', [PagesController::class, 'show'])->where('title', '[A-Za-z]+');
+Route::post('strony', [PagesController::class, 'store']);
+Route::get('strony/dodaj', [PagesController::class, 'create']);
+Route::get('/strony/{id}', [PagesController::class, 'show'])->where('id', '[0-9]+');
