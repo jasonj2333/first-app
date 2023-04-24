@@ -44,4 +44,10 @@ class PagesController extends Controller
 
          return redirect('/strony');
     }
+
+    public function edit(int $id)
+    {
+        $page = Page::findOrFail($id);
+        return view('pages.edit', ['page'=>$page]);
+    }
 }

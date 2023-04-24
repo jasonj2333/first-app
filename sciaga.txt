@@ -5,3 +5,9 @@ php artisan serve
 php artisan make:controller PagesController
 php artisan make:model Page --migration
 php artisan migrate
+
+Z Githuba
+composer install
+tworzymy plik .env z .env.example
+php artisan serve 
+php artisan migrate 
