@@ -21,4 +21,7 @@ Route::get('/', function () {
 Route::get('strony', [PagesController::class, 'index']);
 Route::post('strony', [PagesController::class, 'store']);
 Route::get('strony/dodaj', [PagesController::class, 'create']);
-Route::get('/strony/{slug}', [PagesController::class, 'show']);
+Route::get('/strony/{slug}', [PagesController::class, 'show'])->name('pages.show');
+Route::put('strony', [PagesController::class, 'update']);
+Route::get('/strony/{id}/edit', [PagesController::class, 'edit'])->name('pages.edit');
+Route::delete('strony/{id}', [PagesController::class, 'destroy']);

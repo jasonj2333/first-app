@@ -6,7 +6,8 @@
     <h1>Moje strony</h1>
     @foreach ($pages as $page)
         <h2>{{ $page->title }}</h2>
-        <p> <a href="strony/{{ $page->slug }}"> >>>Czytaj więcej</a> </p>
+        <p> <a href="{{route('pages.show' ,$page->slug) }}"> >>>Czytaj więcej</a> </p>
+        <p><a href="{{route('pages.edit', $page->id)}}">Zmień</a></p>
         <hr>
     @endforeach
 @endsection
