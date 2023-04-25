@@ -9,3 +9,12 @@
 - php artisan make:controller PagesController
 - php artisan make:model Page --migration
 - php artisan migrate
+
+## Laravel first-app z Github
+- zainstaluj git
+- git clone https://github.com/jasonj2333/first-app.git
+- composer install
+- tworzymy plik .env z .env.example
+- php artisan key:generate
+- php artisan serve 
+- php artisan migrate 
