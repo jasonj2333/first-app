@@ -45,9 +45,34 @@ class PagesController extends Controller
          return redirect('/strony');
     }
 
-    public function edit(int $id)
+    public function edit(Page $page)
     {
-        $page = Page::findOrFail($id);
+        // $page = Page::findOrFail($id);
         return view('pages.edit', ['page'=>$page]);
+    }
+
+    public function update(Request $request, Page $page)
+    {
+        $request->validate([
+            'title' => 'required|min:5',
+            'slug' => 'required',
+            'content' => 'required|min:10',
+        ]);
+
+        $page = Page::find($request->hidden_id);
+        $page->title = $request->title;
+        $page->slug = $request->slug;
+        $page->content = $request->content;
+        $page->save();
+
+        // $data = $request->all();
+        // $page->update($data);
+        return redirect('strony');
+    }
+
+    public function destroy(Page $page)
+    {
+        $page->delete();
+        return redirect('strony');
     }
 }
